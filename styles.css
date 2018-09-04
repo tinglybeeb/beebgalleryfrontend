@@ -11,6 +11,43 @@ body {
 	margin: 0;
 }
 
+/* Top Navbar
+========================================================= */
+
+.nav {
+	position: fixed;
+	top: 0;
+	z-index: 4;
+	width: 100%;
+}
+
+.nav .left-nav {
+	list-style: none;
+	padding-left: 15px;
+	float: left;
+	margin-top: 10px;
+}
+
+.nav .right-nav {
+	list-style: none;
+	padding-right: 15px;
+	float: right;
+	margin-top: 10px;
+}
+
+.nav ul li {
+	font-family: sans-serif;
+	font-size: 10px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: 500;
+	display: inline;
+	color: #444;
+}
+
+/* Gallery
+========================================================= */
+
 #gallery-view {
 	width: 100vw;
 	overflow-x: scroll;
@@ -130,4 +167,11 @@ body {
 	top: 10px;
 	background: #ebebeb;
 	border-radius: 100px;
+}
+
+.animals {
+	width: 80px;
+	position: absolute;
+	z-index: 5;
+	bottom: 0px;
 }
