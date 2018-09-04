@@ -1,0 +1,113 @@
+<!-- I'll need to find a way to use dynamic variables to populate the .full-gallery-slider's width -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="bjqs.css">
+		<link rel="stylesheet" href="styles.css">
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="js/bjqs-1.3.js"></script>
+	</head>
+
+	<body>
+		
+		<!-- Parent - outer wrapper -->
+    <div id="gallery-view">
+
+      <!-- Gallery slider -->
+      <ul class="full-gallery-slider">
+      	<li>
+      		<div class="inner">
+      			<div class="art-section">
+	      			<div class="art-piece">
+	      				<img class="art-piece-image" src="https://instagram.fsin1-1.fna.fbcdn.net/vp/5f472f580f4b46b08666504f66db98d4/5C201D02/t51.2885-15/e35/25012090_135110713933402_7188524679286489088_n.jpg">
+	      			</div>
+	      			<div class="art-piece-desc-card">
+	      				Beebish wabbit goes on a trip
+	      			</div>
+      			</div>
+      		</div>
+      	</li>
+      	<li>
+      		<div class="inner">
+      			<div class="art-section">
+	      			<div class="art-piece">
+	      				<img class="art-piece-image" src="https://instagram.fsin1-1.fna.fbcdn.net/vp/54e20eb05ada6fd693835cbd801a1d79/5C30330C/t51.2885-15/e35/15048165_1730074770645431_2537453681905762304_n.jpg">
+	      			</div>
+	      			<div class="art-piece-desc-card">
+		      				Beebish wabbit goes on a trip
+		      		</div>
+		      	</div>
+      		</div>
+      	</li>
+      	<li>
+      		<div class="inner">
+      			<div class="art-section">
+		    			<div class="art-piece">
+		    				<img class="art-piece-image" src="https://instagram.fsin1-1.fna.fbcdn.net/vp/b3dff2388b0871d7af6d2d7f78b57cf7/5C2B4DC1/t51.2885-15/e35/13402478_1607290156249604_592480910_n.jpg">
+		    			</div>
+		    			<div class="art-piece-desc-card">
+		      				Beebish wabbit goes on a trip
+	      			</div>	
+	      		</div>
+      		</div>
+      	</li>
+      	<li>
+      		<div class="inner">
+      			<div class="art-section">
+	      			<div class="art-piece">
+	      				<img class="art-piece-image" src="https://instagram.fsin1-1.fna.fbcdn.net/vp/2faf4a52e3fea636e3c85653c7363043/5C358440/t51.2885-15/sh0.08/e35/s640x640/26401797_170930106854609_5106390088271527936_n.jpg">
+	      			</div>
+	      			<div class="art-piece-desc-card">
+		      				Beebish wabbit goes on a trip
+	      			</div>
+	      		</div>
+      		</div>
+      	</li>
+
+      </ul>
+
+      <!-- Floor -->
+      <div class="floor"></div>
+
+      <!-- Pop-up Art Details -->
+      <div class="art-piece-desc-zoomed">
+      	<div class="art-piece-desc-zoomed-cancel"></div>
+      	<!-- Pull art piece desc content here -->
+      	<p>Beebish wabbit goes on a trip</p>
+      </div>
+
+
+    </div>
+    <!-- End outer wrapper -->
+
+    <script>
+  		$(document).ready(function() {
+      	
+      	// saves the intended gallery width in a variable.
+      	// gallery width is based on number of art piece list items
+  			var dynamic_width = "calc(" + $(".full-gallery-slider").children().length + "* 100vw + 5vw"
+  			// sets the gallery width
+    		$(".full-gallery-slider").width(dynamic_width);    		  
+          
+   		});
+
+   		$(".art-piece-desc-card").click(function(){ 
+			  console.log("hi")
+			  $(".art-piece-desc-zoomed").css("transform", "translateY(0px)");
+			});
+
+			$(".art-piece-desc-zoomed-cancel").click(function(){ 
+			  console.log("ho")
+			  $(".art-piece-desc-zoomed").css("transform", "translateY(310px)");
+			});
+
+
+
+    </script>
+
+	</body>
+
+
+</html>
+

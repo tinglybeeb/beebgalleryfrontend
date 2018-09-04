@@ -1,0 +1,133 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+}
+
+#gallery-view {
+	width: 100vw;
+	overflow-x: scroll;
+}
+
+.full-gallery-slider {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	width: 5000px;
+	background: url("https://tympanus.net/Development/3DGalleryRoom/images/wall.jpg") repeat 0px 0px;
+	position: relative;
+	z-index: 1;
+}
+
+.full-gallery-slider li {
+	display: inline-block;
+	width: 100vw;
+	height: 100vh;
+}
+
+/*.art-piece {
+	width: 800px;
+	height: 450px;
+	text-decoration: center;
+	position: relative;
+	top: -30px;
+}*/
+
+.inner {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+/*.art-piece-image {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}*/
+
+.art-piece {
+	position: relative;
+	top: -30px;
+	border: 10px solid #000;
+	box-shadow: 0 10px 7px -5px rgba(0,0,0,0.3);	
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+}
+
+.art-piece img {
+	display: block;
+	margin: 0 auto;
+	border: 20px solid #fff;
+	height: 400px;
+}
+
+.art-piece-desc-card {
+	font-size: 9px;
+	font-family: sans-serif;
+	background: #fff;
+	color: #444;
+	padding: 8px 8px 6px 8px;
+	text-align: left;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	position: relative;
+	top: -10px;
+	width: 18%;
+	line-height: 12px;
+	cursor: zoom-in;
+	/*display: inline-block;*/
+}
+
+.floor {
+	position: fixed;
+	height: 8%;
+	background: url(https://tympanus.net/Development/3DGalleryRoom/images/floor.jpg) repeat 0px 0px;
+	bottom: 0;
+	z-index: 2;
+	width: 100%;
+}
+
+.art-piece-desc-zoomed {
+	position: fixed;
+	z-index: 3;
+	width: 400px;
+	height: 220px;
+	padding: 40px;
+	background: #fff;
+	box-shadow: 0 -1px 3px rgba(0,0,0,0.3);
+	bottom: 0px;
+	margin-left: -200px;
+	left: 50%;
+	overflow-y: scroll;
+	/* Animation styles */
+	-webkit-transform: translateY(310px);
+	-webkit-transition: -webkit-transform .5s ease;
+	-moz-transform: translateY(310px);
+	-moz-transition: -moz-transform .5s ease;
+	-o-transform: translateY(310px);
+	-o-transition: -o-transform .5s ease;
+	-ms-transform: translateY(310px);
+	-ms-transition: -ms-transform .5s ease;
+	transform: translateY(310px);
+	transition: transform .5s ease;
+}
+
+.art-piece-desc-zoomed-cancel {
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	background: #ebebeb;
+	border-radius: 100px;
+}
