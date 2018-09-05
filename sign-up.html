@@ -1,0 +1,94 @@
+<!-- I'll need to find a way to use dynamic variables to populate the .full-gallery-slider's width -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700|Lato:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="bjqs.css">
+		<link rel="stylesheet" href="styles.css">
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	</head>
+
+	<body>
+    <div class="nav">
+      <ul class="left-nav">
+        <li><b>Beebish Gallery</b><br>by Xiao Beeb Beeb</li>
+      </ul>
+      <ul class="right-nav">
+        <li id="menu-button">Menu</li>
+      </ul>
+    </div>
+		
+		<!-- Parent - outer wrapper -->
+    <div class="gallery-view gallery-bg">
+
+      
+      <!-- Floor -->
+      <div class="floor"></div>
+  
+
+      <!-- Pop-up Art Details -->
+      <div class="art-piece-desc-zoomed">
+      	<div class="art-piece-desc-zoomed-cancel"></div>
+      	<!-- Pull art piece desc content here -->
+      	<p>Beebish wabbit goes on a trip</p>
+      </div>
+
+
+    </div>
+    <!-- End outer wrapper -->
+
+    <!-- Nav Overlay -->
+    <div class="nav-overlay">
+      <i class="close-button material-icons">close</i>
+      <ul class="nav-overlay-list">
+        <li><a href=#>New Artist</a></li>
+        <li><a href=#>Log In</a></li>
+        <li><a href=#>About</a></li>
+      </ul>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+      	
+      	// saves the intended gallery width in a variable.
+      	// gallery width is based on number of art piece list items
+  			var dynamic_width = "calc(" + $(".full-gallery-slider").children().length + "* 100vw + 5vw"
+  			// sets the gallery width
+    		$(".full-gallery-slider").width(dynamic_width);    		  
+          
+   		});
+
+      // On click, open the art desc
+   		$(".art-piece-desc-card").click(function(){ 
+			  console.log("hi")
+			  $(".art-piece-desc-zoomed").css("transform", "translateY(0px)");
+			});
+
+			$(".art-piece-desc-zoomed-cancel").click(function(){ 
+			  console.log("ho")
+			  $(".art-piece-desc-zoomed").css("transform", "translateY(310px)");
+			});
+
+      // On menu button click, reveal the menu overlay
+      $("#menu-button").click(function(){
+        console.log("menu clicked");
+        $(".nav-overlay").css({ "opacity": "1", "z-index": "10"});
+        $(".nav-overlay-list > li").css({ "transform": "translateY(0px)"});
+        $("#menu-button").hide();
+      });
+
+      $(".nav-overlay > .close-button").click(function(){
+        console.log("close clicked");
+        $(".nav-overlay").css({ "opacity": "0", "z-index": "0"});
+        $("#menu-button").show();
+      });
+
+    </script>
+
+	</body>
+
+
+</html>
+
