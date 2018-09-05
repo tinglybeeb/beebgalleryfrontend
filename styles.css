@@ -195,7 +195,7 @@ body {
 .art-piece {
 	position: relative;
 	top: -30px;
-	border: 10px solid #000;
+	border: 10px solid #b3d2b6;
 	box-shadow: 0 10px 7px -5px rgba(0,0,0,0.3);	
 	-webkit-box-sizing: content-box;
 	-moz-box-sizing: content-box;
